@@ -1,0 +1,9 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_reconstruction_only_loss, output_dir: outputs/ablations/reconstruction_only_loss}
+loss:
+  lambda_freq: 0.0
+  lambda_align: 0.0
+  lambda_field: 0.0
+  lambda_smooth: 0.0
+  lambda_jacobian: 0.0
+

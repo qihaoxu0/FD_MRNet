@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_single_field, output_dir: outputs/ablations/single_field}
+model: {use_hierarchical_offsets: false}
+

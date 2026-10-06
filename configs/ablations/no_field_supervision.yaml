@@ -1,0 +1,3 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_field_supervision, output_dir: outputs/ablations/no_field_supervision}
+loss: {lambda_field: 0.0}

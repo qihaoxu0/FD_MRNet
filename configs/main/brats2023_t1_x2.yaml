@@ -1,0 +1,9 @@
+base: ../base.yaml
+experiment: {id: brats2023_t1_x2, output_dir: outputs/brats2023_t1_x2, enabled: false, exclusion_reason: excluded_duplicate_of_brats2021}
+data:
+  dataset: BraTS2023
+  modality: t1
+  train_manifest: manifests/brats2023/train.csv
+  val_manifest: manifests/brats2023/val.csv
+  test_manifest: manifests/brats2023/test.csv
+degradation: {scale: 2, sigma_vox: 0.8493}

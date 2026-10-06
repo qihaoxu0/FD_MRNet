@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_fixed_fusion, output_dir: outputs/ablations/fixed_fusion}
+model: {use_adaptive_fusion: false}
+

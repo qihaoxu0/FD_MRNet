@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: rdn3d_brats2021_t1_x4, output_dir: outputs/baselines/rdn3d_brats2021_t1_x4}
+model: {name: rdn3d, channels: 48, growth: 24, num_blocks: 6, layers: 4}
+

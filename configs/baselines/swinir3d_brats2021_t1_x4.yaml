@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: swinir3d_brats2021_t1_x4, output_dir: outputs/baselines/swinir3d_brats2021_t1_x4}
+model: {name: swinir3d, channels: 48, num_blocks: 8, heads: 4, window_dhw: [4, 4, 4]}
+

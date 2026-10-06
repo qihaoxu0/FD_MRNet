@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: spectral_brats2021_t1_x4, output_dir: outputs/baselines/spectral_brats2021_t1_x4}
+model: {name: spectralsr3d, channels: 48, num_blocks: 6}
+

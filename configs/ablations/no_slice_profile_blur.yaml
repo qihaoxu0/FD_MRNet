@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_slice_profile_blur, output_dir: outputs/ablations/no_slice_profile_blur}
+degradation: {sigma_vox: 0.0}
+

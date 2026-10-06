@@ -1,0 +1,9 @@
+configs/main/brats2021_t1_x2.yaml
+configs/main/brats2021_t1_x4.yaml
+configs/main/brats2021_t2_x2.yaml
+configs/main/brats2021_t2_x4.yaml
+configs/main/brats2023_t1_x2.yaml
+configs/main/brats2023_t1_x4.yaml
+configs/main/brats2023_t2_x2.yaml
+configs/main/brats2023_t2_x4.yaml
+

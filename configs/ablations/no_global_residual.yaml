@@ -1,0 +1,3 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_global_residual, output_dir: outputs/ablations/no_global_residual}
+model: {use_global_residual: false}

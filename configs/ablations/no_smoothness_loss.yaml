@@ -1,0 +1,3 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_smoothness_loss, output_dir: outputs/ablations/no_smoothness_loss}
+loss: {lambda_smooth: 0.0}

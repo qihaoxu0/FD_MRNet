@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_attention, output_dir: outputs/ablations/no_attention}
+model: {use_attention: false}
+

@@ -1,0 +1,40 @@
+base: ../base.yaml
+experiment:
+  id: weekly_unset
+  seed: 2025
+  output_dir: E:/Research/FD-MRNet-reproduction/weekly_outputs/UNSET
+data:
+  dataset: BraTS2021
+  modality: t1
+  train_manifest: ./manifests/brats2021_seed2025/train.csv
+  val_manifest: ./manifests/brats2021_seed2025/val.csv
+  test_manifest: ./manifests/brats2021_seed2025/test.csv
+  external_eval_manifest: ./manifests/brats2023_gli_validation_external_all.csv
+  external_eval_without_seg: true
+  patch_size_dhw: [48, 96, 96]
+  num_workers: 4
+training:
+  mode: bounded_micro_steps
+  maximum_micro_steps: 6000
+  minimum_micro_steps: 3000
+  validation_interval_micro_steps: 500
+  checkpoint_interval_micro_steps: 500
+  early_stopping_patience: 3
+  early_stopping_min_delta_psnr: 0.02
+  batch_size_per_gpu: 1
+  gradient_accumulation: 1
+  target_global_batch_size: 1
+  learning_rate: 0.00005
+  scheduler: cosine_annealing_by_optimizer_step
+  scheduler_t_max_optimizer_steps: 6000
+  amp: true
+  gradient_clip: 1.0
+  activation_checkpointing: true
+  pin_memory: true
+  persistent_workers: true
+  best_checkpoint_metric: validation_brain_nonzero_psnr
+  test_for_checkpoint_selection: false
+selection_provenance:
+  selected_candidate: B
+  selection_report: E:/Research/FD-MRNet-reproduction/selection_report.json
+  from_random_initialization: true

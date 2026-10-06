@@ -1,0 +1,3 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_alignment_loss, output_dir: outputs/ablations/no_alignment_loss}
+loss: {lambda_align: 0.0}

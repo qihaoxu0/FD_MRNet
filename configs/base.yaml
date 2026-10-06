@@ -1,0 +1,83 @@
+experiment:
+  id: unset
+  seed: 2025
+  output_dir: outputs/UNSET
+
+data:
+  dataset: UNSET
+  modality: t1
+  train_manifest: manifests/UNSET/train.csv
+  val_manifest: manifests/UNSET/val.csv
+  test_manifest: manifests/UNSET/test.csv
+  patch_size_dhw: [64, 128, 128]
+  train_samples_per_epoch: 4000
+  val_samples_per_epoch: 125
+  foreground_probability: 0.8
+  clip_z: 5.0
+  num_workers: 4
+  augmentation:
+    flip_probability: 0.5
+    inplane_rot90_probability: 0.5
+
+degradation:
+  axis: depth
+  scale: 2
+  sigma_vox: 0.8493
+  sample_offset: center
+  padding_mode: replicate
+  interpolation: trilinear
+  noise_kind: none
+  noise_std: 0.0
+
+model:
+  name: fdmrnet
+  channels: 48
+  num_blocks: 6
+  heads: 4
+  window_dhw: [4, 4, 4]
+  frequency_sigma: 1.0
+  max_coarse_disp: 2.0
+  max_residual_disp: 1.0
+  gradient_checkpointing: true
+  use_frequency: true
+  use_attention: true
+  use_cross_gate: true
+  use_adaptive_fusion: true
+  use_hierarchical_offsets: true
+  use_residual_propagation: true
+  use_global_residual: true
+
+loss:
+  frequency_sigma: 1.0
+  lambda_rec: 1.0
+  lambda_freq: 0.2
+  lambda_align: 0.1
+  lambda_field: 0.05
+  lambda_smooth: 0.01
+  lambda_jacobian: 0.01
+
+training:
+  epochs: 300
+  batch_size_per_gpu: 1
+  target_global_batch_size: 4
+  gradient_accumulation: 1
+  learning_rate: 0.0001
+  weight_decay: 0.001
+  gradient_clip: 1.0
+  amp: true
+  deterministic: true
+  checkpoint_epochs: [10, 100, 300]
+  geometry_augmentation:
+    probability: 0.25
+    max_local_displacement_hr_vox: 1.5
+    max_translation_hr_vox: 0.5
+    coarse_grid_dhw: [4, 8, 8]
+    inverse_iterations: 7
+
+evaluation:
+  patch_size_dhw: [64, 128, 128]
+  overlap_dhw: [16, 32, 32]
+  gaussian_sigma_scale: 0.125
+  amp: true
+  data_range: 1.0
+  primary_unit: subject_full_volume

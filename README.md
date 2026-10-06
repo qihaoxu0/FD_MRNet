@@ -1,22 +1,43 @@
-# FD_MRNet
+# FD-MRNet
 
-Archived FD-MRNet code and experiment materials for the JBHI project.
+A PyTorch implementation for single-input, same-contrast 3D through-plane MRI super-resolution. T1w and T2w are separate reconstruction tasks; supported scale factors are ?2 and ?4.
 
-This archive is separate from the ongoing M4Raw-adapted HiFi-Mamba study.
+## Project layout
 
-## Contents
+- `fdmrnet/`: models, data loading, degradation, losses, geometry, metrics and evaluation.
+- `configs/`: model, baseline, ablation and training configuration examples.
+- `scripts/`: dataset auditing, training, inference and result utilities.
+- `tests/`: implementation checks.
+- `slurm/`: scheduler examples.
+- `environment.yml`, `requirements.txt`, `pyproject.toml`: dependency and package definitions.
+- `CODE_MANIFEST.sha256`: checksums for the exported project files.
 
-- `FD_MRNet_JBHI_code_protocol.zip`: historical and clean-room source, configurations, split manifests and protocol records.
-- `FD_MRNet_JBHI_results_manuscripts.zip`: checkpoints, evaluation records and local manuscript history; intended as a release attachment rather than a Git commit.
+## Installation
 
-## Experiment scope
+```bash
+conda env create -f environment.yml
+conda activate fdmrnet-rr
+pip install -e .
+```
 
-The preserved materials include completed seed-2025 10-epoch validation pilots and an interrupted 30-epoch run with an epoch-1 checkpoint and a partial epoch-2 ledger. These are not completed 30-epoch results. Local manuscripts are historical or working copies, not verified copies of the final submitted manuscript.
+## Getting started
 
-The original model-linked evidence for manuscript Tables I?V remains incompletely recovered. Available aggregate tables must not be treated as a recovered checkpoint-to-patient-result provenance chain.
+Edit dataset and manifest paths in the configuration files before running:
 
-No raw MRI data or Python environment is included. Existing licenses in the source package remain applicable; this archive does not introduce a new license.
+```bash
+pytest -q
+python scripts/preflight.py --config configs/main/brats2021_t1_x2.yaml
+python scripts/train.py --config configs/main/brats2021_t1_x2.yaml
+```
 
-## Integrity
+## Implementation
 
-See `SHA256SUMS.txt` for archive checksums. Both original archives remain unchanged locally.
+The default FD-MRNet uses 48 feature channels and six frequency-aware feature blocks. It combines low/high-frequency decomposition, local window attention, hierarchical feature resampling, adaptive fusion and residual reconstruction.
+
+The internal `swinir3d` implementation is a compact 3D window-attention baseline. It is not an official full SwinIR implementation. HF error evaluation uses a normalized discrete 3D Laplacian; it does not use a Laplacian-of-Gaussian filter.
+
+This is a reimplementation snapshot. Model definitions and archived experiment outputs should be matched by configuration and source identity before quantitative comparisons.
+
+## Results
+
+The [release page](https://github.com/qihaoxu0/FD_MRNet/releases/tag/archive-20261006) contains the archived results package. Raw MRI data is not included. Local configuration paths in this export are examples; original local archives are preserved separately.

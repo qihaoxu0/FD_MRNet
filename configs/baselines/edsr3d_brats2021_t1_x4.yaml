@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: edsr3d_brats2021_t1_x4, output_dir: outputs/baselines/edsr3d_brats2021_t1_x4}
+model: {name: edsr3d, channels: 64, num_blocks: 16}
+

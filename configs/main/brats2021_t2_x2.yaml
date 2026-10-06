@@ -1,0 +1,10 @@
+base: ../base.yaml
+experiment: {id: brats2021_t2_x2, output_dir: outputs/brats2021_t2_x2}
+data:
+  dataset: BraTS2021
+  modality: t2
+  train_manifest: manifests/brats2021/train.csv
+  val_manifest: manifests/brats2021/val.csv
+  test_manifest: manifests/brats2021/test.csv
+degradation: {scale: 2, sigma_vox: 0.8493}
+

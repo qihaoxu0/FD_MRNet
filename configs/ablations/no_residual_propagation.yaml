@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_residual_propagation, output_dir: outputs/ablations/no_residual_propagation}
+model: {use_residual_propagation: false}
+

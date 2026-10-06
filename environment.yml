@@ -1,0 +1,26 @@
+name: fdmrnet-rr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.6
+  - torchvision
+  - pytorch-cuda=12.4
+  - numpy
+  - scipy
+  - h5py
+  - pandas
+  - nibabel
+  - pyyaml
+  - scikit-image
+  - matplotlib
+  - seaborn
+  - tqdm
+  - pip
+  - pip:
+      - pytest>=8
+      - ruff>=0.6
+      - tabulate>=0.9
+      - fvcore>=0.1.5

@@ -1,0 +1,4 @@
+base: ../main/brats2021_t1_x4.yaml
+experiment: {id: ablation_no_cross_gate, output_dir: outputs/ablations/no_cross_gate}
+model: {use_cross_gate: false}
+
