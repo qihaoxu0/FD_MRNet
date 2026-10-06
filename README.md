@@ -34,8 +34,6 @@ python scripts/train.py --config configs/main/brats2021_t1_x2.yaml
 
 The default FD-MRNet uses 48 feature channels and six frequency-aware feature blocks. It combines low/high-frequency decomposition, local window attention, hierarchical feature resampling, adaptive fusion and residual reconstruction.
 
-The internal `swinir3d` implementation is a compact 3D window-attention baseline. It is not an official full SwinIR implementation. HF error evaluation uses a normalized discrete 3D Laplacian; it does not use a Laplacian-of-Gaussian filter.
-
 This is a reimplementation snapshot. Model definitions and archived experiment outputs should be matched by configuration and source identity before quantitative comparisons.
 
 ## Results
