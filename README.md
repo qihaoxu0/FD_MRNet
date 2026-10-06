@@ -1,6 +1,6 @@
 # FD-MRNet
 
-A PyTorch implementation for single-input, same-contrast 3D through-plane MRI super-resolution. T1w and T2w are separate reconstruction tasks; supported scale factors are ?2 and ?4.
+A PyTorch implementation for single-input, same-contrast 3D through-plane MRI super-resolution. T1w and T2w are separate reconstruction tasks; supported scale factors are x2 and x4.
 
 ## Project layout
 
@@ -36,8 +36,8 @@ The default FD-MRNet uses 48 feature channels and six frequency-aware feature bl
 
 The internal `swinir3d` implementation is a compact 3D window-attention baseline. It is not an official full SwinIR implementation. HF error evaluation uses a normalized discrete 3D Laplacian; it does not use a Laplacian-of-Gaussian filter.
 
-This is a reimplementation snapshot. Model definitions and archived experiment outputs should be matched by configuration and source identity before quantitative comparisons.
+This is a reimplementation snapshot. Model definitions and experiment outputs should be matched by configuration and source identity before quantitative comparisons.
 
-## Results
+## Scope
 
-The [release page](https://github.com/qihaoxu0/FD_MRNet/releases/tag/archive-20261006) contains the archived results package. Raw MRI data is not included. Local configuration paths in this export are examples; original local archives are preserved separately.
+This repository distributes source code and configuration examples only. Historical documents, checkpoints and pilot outputs are archived separately. This code release does not assert reproduction of historical quantitative tables.
