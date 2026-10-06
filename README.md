@@ -1,9 +1,6 @@
 # FD_MRNet
 
-Archived FD-MRNet code and experiment materials for the JBHI project.
-
-This archive is separate from the ongoing M4Raw-adapted HiFi-Mamba study.
-
+Archived FD-MRNet code
 ## Contents
 
 - `FD_MRNet_JBHI_code_protocol.zip`: historical and clean-room source, configurations, split manifests and protocol records.
@@ -14,8 +11,6 @@ This archive is separate from the ongoing M4Raw-adapted HiFi-Mamba study.
 The preserved materials include completed seed-2025 10-epoch validation pilots and an interrupted 30-epoch run with an epoch-1 checkpoint and a partial epoch-2 ledger. These are not completed 30-epoch results. Local manuscripts are historical or working copies, not verified copies of the final submitted manuscript.
 
 The original model-linked evidence for manuscript Tables I?V remains incompletely recovered. Available aggregate tables must not be treated as a recovered checkpoint-to-patient-result provenance chain.
-
-No raw MRI data or Python environment is included. Existing licenses in the source package remain applicable; this archive does not introduce a new license.
 
 ## Integrity
 
