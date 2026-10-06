@@ -1,6 +1,6 @@
 # FD-MRNet
 
-A PyTorch implementation for single-input, same-contrast 3D through-plane MRI super-resolution. T1w and T2w are separate reconstruction tasks; supported scale factors are ?2 and ?4.
+A PyTorch implementation for single-input, same-contrast 3D through-plane MRI super-resolution. T1w and T2w are separate reconstruction tasks; supported scale factors are ×2 and ×4.
 
 ## Project layout
 
